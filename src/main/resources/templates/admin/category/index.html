@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head"></head>
+<body>
+    <nav th:replace="fragments/nav :: nav-admin"></nav>
+    <div class="container-fluid">
+        <h4 class="display-4">Category</h4>
+        <a th:href="@{/admin/category/add}" class="btn btn-danger">Add Category</a>
+        <div th:if="${!categories.empty}">
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Parent Category</th>
+                    <th>Parent Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr th:each="category: ${categories}">
+                    <td th:text="${category.id}"></td>
+                    <td th:text="${category.name}"></td>
+                    <td th:text="${category.parentId==-1?'':category.parentId}"></td>
+                    <td th:text="${cats[__${category.parentId}__]}"></td>
+                    <td>
+                        <a th:href="@{'/admin/category/edit/'+${category.id}}">Edit</a>
+                    </td>
+                    <td>
+                        <a class="confirmationDeletion" th:href="@{'/admin/category/delete/'+${category.id}}">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div th:unless="${!categories.empty}"> Categories are empty</div>
+    </div>
+    <footer th:replace="fragments/footer"></footer>
+</body>
+</html>

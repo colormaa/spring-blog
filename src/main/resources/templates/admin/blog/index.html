@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head"></head>
+<body>
+    <nav th:replace="fragments/nav :: nav-admin"></nav>
+    <div class="container-fluid">
+        <h4 class="display-4">blog list</h4>
+        <a href="/admin/blog/add" class="btn btn-primary">Add Blog</a>
+        <div th:if="${!blogs.empty}">
+            <table class="table">
+                <tr>
+                    <th>Title</th>
+                    <th>Image</th>
+                    
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr th:each="blog: ${blogs}">
+                    <td th:text="${blog.title}"></td>
+                    <td>
+                        <img style="height:100px" th:src="${blog.image}" alt="">
+                    </td>
+                    <td>
+                        <a th:href="@{'/admin/blog/edit/'+${blog.id}}">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{'/admin/blog/delete/'+${blog.id}}">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div th:unless="${!blogs.empty}">
+            Blog empty
+        </div>
+    </div>
+    <footer th:replace="fragments/footer"></footer>
+</body>
+</html>

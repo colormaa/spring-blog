@@ -1,0 +1,6 @@
+spring:
+  security:
+    user:
+      name: user
+      password: b94d4253-4556-4380-963f-99a02bfc029a
+  

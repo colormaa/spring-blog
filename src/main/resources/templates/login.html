@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head"></head>
+<body  class="login h-100" >
+    <nav th:replace="fragments/nav :: nav-front"></nav>
+    <div class="container h-100">
+        
+        <div class="row h-100 justify-content-between align-items-center">
+
+            <div class="col-8 ">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <img th:src="@{'/images/login.svg'}" class="col-8"  alt="">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-4  ">
+                 
+                <div class="border bg-white  pt-4 rounded rounded-4">
+                    <div class="mx-4">
+                        <h4 class="mt-4 mb-3 h4 " style="line-height:0; text-transform:uppercase">Welcome back ...</h4>
+                        <p class="text-muted mb-4"><small>Please enter your email and password</small></p>
+                        <form th:action="@{'/login'}" method="post" >
+                            <div class="form-group ">
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Username" />
+                            </div>
+                        
+    
+                            <div class="form-group mt-2">
+                                <!-- <label for="">Password</label> -->
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+                            </div>
+                        
+                            <div class="form-group mt-2">
+                                <p class="text-muted">
+                                <small>By login you agree our 
+                                    <span><a class="mylink" href="#">Terms And Condition</a></span></small>
+                                </p>
+                                
+                            </div>
+                            <div class="d-flex mt-5 mb-4">
+                                <button class="btn btn-primary mt-2 me-auto">
+                                    login... &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        <i class="bi bi-dash"></i>
+                                        <i class="bi bi-arrow-right"></i>
+                                
+                                </button>
+                                
+                            <a class="mylink text-decoration-none my-auto" href="#"><small> <i class="bi bi-geo-alt-fill"></i> forget password</small></a> 
+                            </div>
+                        </form>
+                    </div>
+                    <hr>
+                    <p class="text-muted py-2 px-4"><small>Don't have an account yet? <a class="mylink" href="#"> Create Account</a></small></p>
+
+                </div>
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <footer th:replace="fragments/footer"></footer>
+</body>
+</html>
