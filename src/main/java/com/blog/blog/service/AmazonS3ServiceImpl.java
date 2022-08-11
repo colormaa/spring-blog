@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +23,6 @@ public class AmazonS3ServiceImpl implements AmazonS3Service {
     @Override
     public PutObjectResult upload(String path, String fileName, Optional<Map<String, String>> optionalMetaData,
             InputStream inputStream) {
-        // TODO Auto-generated method stub
         ObjectMetadata objectMetadata = new ObjectMetadata();
 
         optionalMetaData.ifPresent(map -> {
