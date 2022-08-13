@@ -10,7 +10,7 @@
                     <img th:if="${blog.image}" th:src="${blog.image}" alt="">
                     <a th:href="@{'/detail/'+${blog.slug}}"><h4 class="display-6" th:text="${blog.title}"></h4></a>
                 <p class="subInfo">
-                    <span class="author">By Author</span>
+                    <span class="author" th:text="${'By '+authorName}"></span>
                     <span class="separator">|</span>
                     <span class="datetime" th:text="${#temporals.format(blog.createdAt, 'yyyy-MM-dd HH:mm')}"></span>
                 </p>

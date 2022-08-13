@@ -183,3 +183,6 @@ p small{
 .text-primary{
     color:#1f8372 !important;
 }
+.error{
+    color:red;
+}

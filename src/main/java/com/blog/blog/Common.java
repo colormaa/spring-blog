@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.blog.blog.model.BlogRepository;
 import com.blog.blog.model.CategoryRepository;
+import com.blog.blog.model.UserRepository;
 import com.blog.blog.model.data.Blog;
 import com.blog.blog.model.data.Category;
+import com.blog.blog.model.data.User;
 
 @ControllerAdvice
 public class Common {
@@ -22,10 +24,16 @@ public class Common {
     @Autowired
     private BlogRepository blogRepo;
 
+    @Autowired
+    private UserRepository userRepo;
+
     @ModelAttribute
     public void sharedData(Model model, Principal principal) {
         if (principal != null) {
             model.addAttribute("principal", principal.getName());
+            User userLoggedIn = userRepo.findByUsername(principal.getName());
+            System.out.println("pringical user " + userLoggedIn);
+            model.addAttribute("principalUser", userLoggedIn);
         }
         List<Category> categories = categoryRepo.findAllByParentId(-1);
         model.addAttribute("commonCategories", categories);

@@ -21,7 +21,7 @@ import lombok.Data;
 @Data
 public class Admin implements UserDetails {
 
-    private static final long serialVersionUID = 11;
+    private static final long serialVersionUID = 21;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

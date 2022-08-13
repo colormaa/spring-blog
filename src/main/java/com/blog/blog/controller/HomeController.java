@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.blog.blog.model.BlogRepository;
 import com.blog.blog.model.CategoryRepository;
+import com.blog.blog.model.UserRepository;
 import com.blog.blog.model.data.Admin;
 import com.blog.blog.model.data.Blog;
 import com.blog.blog.model.data.Category;
@@ -27,6 +28,9 @@ import com.blog.blog.model.data.User;
 public class HomeController {
     @Autowired
     private BlogRepository blogRepo;
+
+    @Autowired
+    private UserRepository userRepo;
 
     @Autowired
     private CategoryRepository categoryRepo;
@@ -66,6 +70,8 @@ public class HomeController {
     public String detail(@PathVariable String slug, Model model) {
         Blog blog = blogRepo.findBySlug(slug);
         model.addAttribute("blog", blog);
+        User author = userRepo.getReferenceById(Integer.parseInt(blog.getAuthorId()));
+        model.addAttribute("authorName", author.getUsername());
         System.out.print("blog " + blog);
         Category category = categoryRepo.getReferenceById(Integer.parseInt(blog.getCategoryId()));
         model.addAttribute("categoryName", category.getName());
