@@ -29,7 +29,13 @@
                             <input type="file" class="form-control" th:id="file" th:name="file">
                             <img src="#" id="imgPreview1" alt="">
                         </div>
-                        
+                        <div class="form-group">
+                            <label for="">Category</label>
+                            <select th:field="*{categoryId}" class="form-control">
+                                <option value="-1">None</option>
+                                <option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="">Minutes</label>
                             <input type="text" class="form-control" th:field="*{minutes}" placeholder="Minutes to read"/>
