@@ -38,7 +38,7 @@ public class UserAuthController {
     public String addPost(Blog blog, Model model) {
         List<Category> categories = categoryRepo.findAll();
         model.addAttribute("categories", categories);
-        return "/user/addPost";
+        return "addPost";
     }
 
     private static String getExtension(String fileName) {
