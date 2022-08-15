@@ -86,7 +86,12 @@
            
             <form th:if="${principal!=null}"  method="post" th:action="@{/logout}">
               <div class="d-inline-flex ">
-                <a className="btn btn-secondary" href="/addPost"><i class="bi bi-file-earmark-plus"></i> add post</a>
+
+                <button type="button" class="btn btn-outline-primary"> 
+                  <a className="" style="decoration:none; color: #333;" href="/addPost"><i class="bi bi-file-earmark-plus"></i> Add Post</a>
+                
+                </button>
+
                 <h5 th:text="${'Hi, '+principal}" class="my-auto mr-5"></h5> &nbsp;
                 <button class="btn btn-primary  ">Logout</button>
               </div>
