@@ -10,8 +10,8 @@
                     <h4 class="display-4">Add Blog</h4>
                     <a href="/" class="btn btn-primary">Back</a>
                     <div th:if="${message}" th:text="${message}" th:class="'alert mt-5 '+${alertClass}" ></div>
-                    <!-- <form method="post" enctype="multipart/form-data" th:object="${blog}" th:action="@{/addPost}">
-            
+                    <form method="post" enctype="multipart/form-data" th:object="${blog}" th:action="@{/addPost}">
+<!--             
                         <div  th:if="${#fields.hasErrors('*')}" class=" mt-5 alert alert-danger">
                             Error occured. Please try again.
                         </div>
@@ -50,10 +50,10 @@
                             <span class="error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
                         </div>
                         <input type="text" class="form-control" th:value="${principalUser.id}" th:id="authorId" th:name="authorId" />
-                            
+                             -->
             
                         <button class="btn btn-danger mt-5">Add</button>
-                    </form> -->
+                    </form> 
                 </div>
             </div>
             
