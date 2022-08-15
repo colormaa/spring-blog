@@ -16,17 +16,18 @@
                             <input type="text" class="form-control" th:field="*{title}" placeholder="Title"/>
                             <span class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
                         </div>
-<!--             
-                        <div  th:if="${#fields.hasErrors('*')}" class=" mt-5 alert alert-danger">
-                            Error occured. Please try again.
-                        </div>
-                        
                         <div class="form-group">
                             <label for="">Sub text</label>
                             <input type="text" class="form-control" th:field="*{subtext}" placeholder="Sub text"/>
                             <span class="error" th:if="${#fields.hasErrors('subtext')}" th:errors="*{subtext}"></span>
                         </div>
                         
+<!--             
+                        <div  th:if="${#fields.hasErrors('*')}" class=" mt-5 alert alert-danger">
+                            Error occured. Please try again.
+                        </div>
+                        
+                       
                         <div class="form-group">
                             <label for="">Category</label>
                             <select th:field="*{categoryId}" class="form-control">
