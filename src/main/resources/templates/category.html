@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class=" col-6 col-sm-6 col-md-4 col-lg-4 " th:each="blogCat:${blogsByCat}">
                             <div class="card bycat border-0">
-                                <img th:src="@{'/media/'+${blogCat.image}}" class="card-img-top" alt="...">
+                                <img th:src="@{${blogCat.image}}" class="card-img-top" alt="...">
                                 <div class="card-body px-0 d-flex flex-column align-items-start justify-content-between">
                                   <div>
 
@@ -44,7 +44,7 @@
                     
                     <div class=" mb-4">
                         <div class="card border-0">
-                            <img th:src="@{'/media/'+${latest.image}}" class="card-img-top" alt="...">
+                            <img th:src="@{${latest.image}}" class="card-img-top" alt="...">
                           
                         <div class="card-body p-0">
                             <h5  class="card-title h6" th:text="${latest.title}"></h5>
@@ -56,12 +56,12 @@
                     </div>
                     <div th:each="item23: ${latest23}" class=" mb-4">
                         <div class="card border-0">
-                            <img th:src="@{'/media/'+${item23.image}}" class="card-img-top" alt="...">
+                            <img th:src="@{${item23.image}}" class="card-img-top" alt="...">
                             
                         <div class="card-body p-0">
                             <h5  class="card-title h6" th:text="${item23.title}"></h5>
                             <small><p class="card-text text-muted"  th:text="${item23.brief}"></p></small>
-                            <strong><a th:href="@{'/detail/'+${item23.slug}}" class="mylink" th:text="@{'Read in '+${item23.minutes?:'2'}+' minutes'}"></a></strong>
+                            <strong><a th:href="@{${item23.slug}}" class="mylink" th:text="@{'Read in '+${item23.minutes?:'2'}+' minutes'}"></a></strong>
                         </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                             <div class="card-body p-0">
                                 <h5  class="card-title h6" th:text="${readItem.title}"></h5>
                                 <small><p class="card-text text-muted"  th:text="${readItem.brief}"></p></small>
-                                <strong><a  th:href="@{'/detail/'+${readItem.slug}}" class="mylink" th:text="@{'Read in '+${readItem.minutes?:'2'}+' minutes'}"></a></strong>
+                                <strong><a  th:href="@{${readItem.slug}}" class="mylink" th:text="@{'Read in '+${readItem.minutes?:'2'}+' minutes'}"></a></strong>
                             </div>
                         </div>
                     </div>
