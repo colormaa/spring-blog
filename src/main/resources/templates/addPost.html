@@ -21,6 +21,11 @@
                             <input type="text" class="form-control" th:field="*{subtext}" placeholder="Sub text"/>
                             <span class="error" th:if="${#fields.hasErrors('subtext')}" th:errors="*{subtext}"></span>
                         </div>
+                        <div class="form-group">
+                            <label for="">Image</label>
+                            <input type="file" class="form-control" th:id="file" th:name="file">
+                            <img src="#" id="imgPreview1" alt="">
+                        </div>
                         
 <!--             
                         <div  th:if="${#fields.hasErrors('*')}" class=" mt-5 alert alert-danger">
@@ -28,18 +33,8 @@
                         </div>
                         
                        
-                        <div class="form-group">
-                            <label for="">Category</label>
-                            <select th:field="*{categoryId}" class="form-control">
-                                <option value="-1">None</option>
-                                <option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Image</label>
-                            <input type="file" class="form-control" th:id="file" th:name="file">
-                            <img src="#" id="imgPreview1" alt="">
-                        </div>
+                        
+                        
                         <div class="form-group">
                             <label for="">Minutes</label>
                             <input type="text" class="form-control" th:field="*{minutes}" placeholder="Minutes to read"/>
