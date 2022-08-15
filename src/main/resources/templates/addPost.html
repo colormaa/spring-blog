@@ -27,6 +27,11 @@
                             <img src="#" id="imgPreview1" alt="">
                         </div>
                         
+                        <div class="form-group">
+                            <label for="">Minutes</label>
+                            <input type="text" class="form-control" th:field="*{minutes}" placeholder="Minutes to read"/>
+                            <span class="error" th:if="${#fields.hasErrors('minutes')}" th:errors="*{minutes}"></span>
+                        </div>
 <!--             
                         <div  th:if="${#fields.hasErrors('*')}" class=" mt-5 alert alert-danger">
                             Error occured. Please try again.
@@ -35,11 +40,6 @@
                        
                         
                         
-                        <div class="form-group">
-                            <label for="">Minutes</label>
-                            <input type="text" class="form-control" th:field="*{minutes}" placeholder="Minutes to read"/>
-                            <span class="error" th:if="${#fields.hasErrors('minutes')}" th:errors="*{minutes}"></span>
-                        </div>
             
                         <div class="form-group">
                             <label for="">Content</label>
