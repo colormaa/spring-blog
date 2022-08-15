@@ -8,9 +8,9 @@
             <div class="col-10">
                 <div class="container-fluid">
                     <h4 class="display-4">Add Blog</h4>
-                    <a href="/admin/blog" class="btn btn-primary">Back to blog</a>
+                    <a href="/" class="btn btn-primary">Back</a>
                     <div th:if="${message}" th:text="${message}" th:class="'alert mt-5 '+${alertClass}" ></div>
-                    <form method="post" enctype="multipart/form-data" th:object="${blog}" th:action="@{/addPost}">
+                    <!-- <form method="post" enctype="multipart/form-data" th:object="${blog}" th:action="@{/addPost}">
             
                         <div  th:if="${#fields.hasErrors('*')}" class=" mt-5 alert alert-danger">
                             Error occured. Please try again.
@@ -53,7 +53,7 @@
                             
             
                         <button class="btn btn-danger mt-5">Add</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
             
