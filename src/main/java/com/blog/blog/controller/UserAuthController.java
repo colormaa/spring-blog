@@ -103,8 +103,8 @@ public class UserAuthController {
             text = text.substring(0, endIndex) + textEnd;
 
             blog.setBrief(text);
-            // -String filepath = metadataService.upload(file, filename);
-            // -blog.setImage(filepath);
+            String filepath = metadataService.upload(file, filename);
+            blog.setImage(filepath);
 
             blogRepo.save(blog);
             // Files.write(path, bytes);
