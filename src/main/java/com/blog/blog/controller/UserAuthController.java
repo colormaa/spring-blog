@@ -21,6 +21,7 @@ import com.blog.blog.model.CategoryRepository;
 import com.blog.blog.model.UserRepository;
 import com.blog.blog.model.data.Blog;
 import com.blog.blog.model.data.Category;
+import com.blog.blog.model.data.User;
 import com.blog.blog.service.MetadataService;
 
 @Controller
@@ -33,6 +34,16 @@ public class UserAuthController {
     private BlogRepository blogRepo;
     @Autowired
     private CategoryRepository categoryRepo;
+
+    @GetMapping("/profile")
+    public String profile(User user, Model model) {
+        return "profile";
+    }
+
+    @GetMapping("/accountSecurity")
+    public String accountSecurity(User user, Model model) {
+        return "accountSecurity";
+    }
 
     @GetMapping("/addPost")
     public String addPost(Blog blog, Model model) {

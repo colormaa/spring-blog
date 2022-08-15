@@ -119,6 +119,9 @@ body {
 .mylink{
     color:#09443a;
 }
+.mylink:hover, .mylink:active{
+    color:black;
+}
 p small{
     font-size: 12px;
 }
@@ -185,4 +188,23 @@ p small{
 }
 .error{
     color:red;
+}
+.profileUserCircle{
+    width:100px;
+    height: 100px;
+    background-color: #09443a;
+    border-radius: 50%;
+    color:white;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin:20px;
+
+}
+.profileUserCircle p{
+    margin:0;
+    padding:0;
+    line-height: 1;
 }

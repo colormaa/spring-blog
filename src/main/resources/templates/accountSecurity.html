@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head"></head>
+<body>
+    <nav th:replace="fragments/nav :: nav-client"></nav>
+    <div class="container">
+        <div class="row">
+            
+            <div  class="col-10 mx-auto ">
+                <div class="row border mb-5">
+                    <div th:replace="fragments/profileSideMenu" ></div>
+                    <div class="col-9 border-start p-0">
+                        <div class="border-bottom mt-3">
+                            <h4 class="text-center">Account Security</h4>
+                            <p class="text-center">Edit your email and change password</p>
+                        </div>
+                        <div class="row mt-5 mb-5">
+
+                            <div class="col-11 mx-auto">
+                                <h6>Email:</h6>
+                                <div class="input-group mt-2">
+                                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Change Email</button>
+                                </div>   
+                            </div>
+                        </div>
+                        <div class="row mt-5 mb-5">
+
+                            <form class="col-11 mx-auto">
+                                <h6>Password:</h6>
+                                <div class="mt-2">
+                                    <input type="text" name="current" class="form-control" placeholder="Enter Current Password"  />
+                                </div>
+                                <div class="mt-4">
+                                    <input type="email" name="newPass" class="form-control" placeholder="Enter New Password"  />
+                                </div>
+                                <div class="mt-4">
+                                    <input type="text" name="oldPass" class="form-control" placeholder="Re-type New Password"  />
+                                </div>
+                               
+
+                                
+                            </form>
+                        </div>
+                        <div class="border-top py-3 d-flex justify-content-center align-items-center">
+                            <button class=" btn btn-primary">Change Password</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+    </div>
+    <footer th:replace="fragments/footer"></footer>
+</body>
+</html>

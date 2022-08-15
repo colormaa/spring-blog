@@ -41,6 +41,10 @@ public class User implements UserDetails {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    private String fullname;
+
+    private String description;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 

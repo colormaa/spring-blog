@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head"></head>
+<body>
+    <nav th:replace="fragments/nav :: nav-client"></nav>
+    <div class="container">
+        <div class="row">
+            
+            <div  class="col-10 mx-auto ">
+                <div class="row border mb-5">
+                    <div th:replace="fragments/profileSideMenu" ></div>
+                    <div class="col-9 border-start p-0">
+                        <div class="border-bottom mt-3">
+                            <h4 class="text-center">Public profile</h4>
+                            <p class="text-center">Add information about yourself</p>
+                        </div>
+                        <div class="row mt-5 mb-5">
+
+                            <div class="col-11 mx-auto">
+                                <h6>Basics:</h6>
+                                <div class="mt-2">
+                                    <input type="text" name="username" class="form-control" placeholder="Username"  />
+                                </div>
+                                <div class="mt-4">
+                                    <input type="email" name="email" class="form-control" placeholder="email@gmail.com"  />
+                                </div>
+                                <div class="mt-4">
+                                    <input type="text" name="fullname" class="form-control" placeholder="Full Name"  />
+                                </div>
+                                <div class="mt-4">
+                                    <textarea placeholder="Tell me about yourself ..." name="content" rows="10" class="form-control"></textarea>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <div class="border-top py-3 d-flex justify-content-center align-items-center">
+                            <button class=" btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+    </div>
+    <footer th:replace="fragments/footer"></footer>
+</body>
+</html>
